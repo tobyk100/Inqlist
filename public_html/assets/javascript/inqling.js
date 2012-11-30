@@ -4,8 +4,8 @@ add_inqling = function() {
     url: '/index.php/main/create_inqling',
     data: {'body': 'new inqling' },
     dataType: 'json',
-    success: function(response) {
-      alert(response);
+    success: function(data) {
+      alert(data);
     }
   });
 }

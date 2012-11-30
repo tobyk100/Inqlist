@@ -14,12 +14,11 @@ class Main extends CI_Controller {
 	}
   public function get_inqlings() {
     $inqlings = $this->inqling_model->get_inqling();
-    print_r($inqlings);
     return json_encode($inqlings);
   }
   public function create_inqling() {
-    $body = "hi";//$this->input->post(NULL);
+    $body = $this->input->post('body');
     $new_inqling = $this->inqling_model->create_inqling($body);
-    return $new_inqling;
+    $this->output->set_output(json_encode($new_inqling));
   }
 }
