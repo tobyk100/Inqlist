@@ -40,10 +40,10 @@ $(document).ready(
         dataType: 'json',
         success: function(data) {
           var inq = $('.inqling.active');
-          inq.next('li').addClass('active');
+          inq.next().next().addClass('active');
           inq.removeClass('active');
           var new_val = $('.inqling.active').find('.text').html();
-          $('.voting-panel.text').html(new_val);
+          $('.voting-panel .text').html(new_val);
         }
       });
     })
