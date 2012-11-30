@@ -5,9 +5,9 @@ disp_solutions = function(inq_id) {
     data: {'id': inq_id },
     dataType: 'json',
     success: function(data) {
-      $.each(data, function(row, solution){
+      $.each(data, function(id, solution){
         var body = solution.body;
-        $('<li><div class="comment">'+body+'</div><div class="arrow-up">&#x25B2;</div><div class="arrow-down">&#x25BC;</div></li>').prependTo("#solutions");
+        $('<li><div class="comment">'+body+'</div><div class="arrow-up">&#x25B2;</div><div class="arrow-down">&#x25BC;</div></li>').prependTo(".comments");
       })
     }
   });
