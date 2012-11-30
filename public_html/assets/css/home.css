@@ -130,11 +130,6 @@ h1 {
   color: #FFF;
 }*/
 
-#solution-slider {
-  width: 100px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
 
 .ui-widget-content {
   height: 5px !important;
@@ -164,18 +159,6 @@ h1 {
   -o-transition: all .3s;  
 }
 
-.voting-panel, .sort {
-  position: fixed !important;
-  width: 80% !important;
-  height: 80px;
-  background-color:rgb(227,232,233);
-  background-color: #555;
-  color: #FFF;
-  border-top: 30px solid #FFF; 
-  z-index: 10000; 
-  top: 39px;
-  display: table;
-}
 
 .comments {
   display: block;
