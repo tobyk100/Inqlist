@@ -26,7 +26,7 @@
   </ul>
 
   <?php $this->load->view('voting_panel'); ?>
-  <ul class="comments"></ul>
+  <?php $this->load->view('comments'); ?>
   <ul class="posts">
     <?php foreach($inqlings as $inqling){ ?>
       <li id = '<?php echo "inq_" . $inqling['id']; ?>'>
