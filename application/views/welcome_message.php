@@ -28,13 +28,17 @@
   <?php $this->load->view('voting_panel'); ?>
   <?php $this->load->view('comments'); ?>
   <ul class="posts">
-    <?php foreach($inqlings as $inqling){ ?>
+    <?php foreach($inqlings as $inqling){ 
+      $rand = rand(1,25);
+      $rand2 = rand(1,25);
+    ?>
+      <img class="resize left" src='/assets/images/inqling_pics/i<?php echo $rand2 ?>.jpg' />
       <li id = '<?php echo "inq_" . $inqling['id']; ?>'>
         <div class="text"><?php echo $inqling['body']; ?></div>
         <div class="vote-bg">
           <span class="vote-text"><?php echo number_format($inqling['pub_rating'], 1); ?></span>
         </div>
-         <img src="/assets/images/user.png">
+         <img class="resize" src="/assets/images/profile_pics/<?php echo $rand;?>.jpg">
       </li>
     <?php } ?>
   </ul>
