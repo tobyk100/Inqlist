@@ -1,6 +1,6 @@
 <?php
 
-class Inqling_Model extends CI_Model{
+class Inqling_model extends CI_Model{
 	/**
 	* Model for Inqlings
 	* Various db calls for different lists of inqulings
@@ -61,7 +61,7 @@ class Inqling_Model extends CI_Model{
 		$data = array(
 			'body' => $body,
 			'rating' => sqrt(5000),
-			'date_created' => date_create(),
+			'date_created' =>  date_format(date_create(), 'Y-m-d H:i:sP'),
 			'url' =>  '/assets/images/something.jpg',
 			'u_id' => 0
 		);
