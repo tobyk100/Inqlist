@@ -46,15 +46,14 @@ DROP TABLE IF EXISTS `inqlings`;
 CREATE TABLE `inqlings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `body` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
   `date_created` datetime DEFAULT NULL,
   `u_id` int(11) DEFAULT NULL,
+  `rating` double DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `u_id` (`u_id`),
   CONSTRAINT `inqlings_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,10 +68,10 @@ CREATE TABLE `solutions` (
   `body` varchar(255) DEFAULT NULL,
   `up_votes` int(11) DEFAULT NULL,
   `down_votes` int(11) DEFAULT NULL,
-  `iapp_flag` tinyint(1) DEFAULT NULL,
   `date_created` datetime DEFAULT NULL,
   `u_id` int(11) DEFAULT NULL,
   `inq_id` int(11) DEFAULT NULL,
+  `inapp_flag` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `u_id` (`u_id`),
   KEY `inq_id` (`inq_id`),
@@ -96,7 +95,7 @@ CREATE TABLE `users` (
   `url` varchar(255) DEFAULT NULL,
   `date_created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,7 +111,7 @@ CREATE TABLE `votes` (
   `urgency` int(11) DEFAULT NULL,
   `u_id` int(11) DEFAULT NULL,
   `inq_id` int(11) DEFAULT NULL,
-  `date_creted` datetime DEFAULT NULL,
+  `date_created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `u_id` (`u_id`),
   KEY `inq_id` (`inq_id`),
@@ -130,4 +129,4 @@ CREATE TABLE `votes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-30  3:39:48
+-- Dump completed on 2012-11-30  6:17:48

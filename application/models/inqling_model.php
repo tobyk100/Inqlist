@@ -57,13 +57,13 @@ class Inqling_model extends CI_Model{
 	}
 
 	public function create_inqling($body){
-
+    $date_created = date_format(date_create(), 'Y-m-d H:i:sP');
 		$data = array(
 			'body' => $body,
 			'rating' => sqrt(5000),
-			'date_created' =>  date_format(date_create(), 'Y-m-d H:i:sP'),
+			'date_created' => $date_created,
 			'url' =>  '/assets/images/something.jpg',
-			'u_id' => 0
+			'u_id' => 1
 		);
 
 		return $this->db->insert('inqlings', $data);

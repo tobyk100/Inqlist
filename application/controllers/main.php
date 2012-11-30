@@ -20,6 +20,6 @@ class Main extends CI_Controller {
   public function create_inqling() {
     $body = "hi";//$this->input->post(NULL);
     $new_inqling = $this->inqling_model->create_inqling($body);
-    return $body;
+    return $new_inqling;
   }
 }
