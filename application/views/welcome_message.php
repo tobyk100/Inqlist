@@ -51,4 +51,9 @@
 
   </ul>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+  add_inqling();
+});
+</script>
 </body>
