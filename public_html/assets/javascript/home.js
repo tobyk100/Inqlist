@@ -10,9 +10,21 @@ $(function() {
     }
   });
 
-  $('ul li').live('click',function() {
-    $('ul li').removeClass('active');
-    $(this).addClass('active');  
+  $('.posts > li').live('click',function() {
+    if ( $(this).hasClass('active') ) {
+      $(this).removeClass('active');
+      $(this).next('ul').css({'display':'none'});
+    } else { 
+      $('.comments').css({'display':'none'});
+      $('.posts li').removeClass('active');    
+      $(this).addClass('active');
+      $(this).next('ul').css({'display':'block'});
+    }
+  });
+
+  $('.sort li').live('click',function() {
+    $('.sort li').removeClass('active');
+    $(this).addClass('active');
   });
 
 });
