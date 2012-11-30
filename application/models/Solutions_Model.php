@@ -3,9 +3,6 @@
 class Solutions_Model extends CI_Model{
 	/**
 	* Model for Solutions
-	* Various db calls for different lists of inqulings
-	*
-	*
 	**/
 	public function __construct(){
 		$this->load->database();
@@ -25,13 +22,39 @@ class Solutions_Model extends CI_Model{
 			'down_votes' => 0,
 			'inapp_flag' => false,
 			'date_created' => date_create(),
-			'u_id' => 0
+			'u_id' => 0,
 			'inq_id' => $inq_id
 		);
 
 		return $this->db->insert('solutions', $data);
 	}
 
+	public function add_vote($v_id){
+		$query = $this->db->get_where('solutions', array('id' => $v_id));
+		$solution = $query->row_array();
+
+		$solution['up_votes']++;
+
+		$this->db->where('id', $v_id);
+		$this->db->update('votes', $solution);
+	}
+
+	public function sub_vote($v_id){
+		$query = $this->db->get_where('solutions', array('id' => $v_id));
+		$solution = $query->row_array();
+
+		$solution['down_votes']++;
+
+		$this->db->where('id', $v_id);
+		$this->db->update('votes', $solution);
+	}
+
+	public function solution_ratio($v_id){
+		$query = $this->db->get_where('solutions', array('id' => $v_id));
+		$solution = $query->row_array();
+
+		return $solution['upvote']/$solution['downvote'];
+	}
 }	
 
 ?>

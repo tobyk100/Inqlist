@@ -3,9 +3,6 @@
 class Votes_Model extends CI_Model{
 	/**
 	* Model for Votes
-	* Various db calls for different lists of inqulings
-	*
-	*
 	**/
 	public function __construct(){
 		$this->load->database();
@@ -47,7 +44,17 @@ class Votes_Model extends CI_Model{
 			'inq_id' => $inq_id
 		);
 
-		return $this->db->insert('votes', $data);
+		$this->db->insert('votes', $data);
+		update_rating($inq_id);
+	}
+
+	private function update_rating($inq_id){
+		$data = array(
+			'rating' => calculate_rating($inq_id)
+		);
+
+		$this->db->where('id', $inq_id);
+		$this->db->update('inqlings', $data);
 	}
 
 }	
