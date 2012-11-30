@@ -20,5 +20,3 @@ function submit_vote_button() {
     }
   });
 }
-$('#submit-vote-sliders').click(//submit_vote_button);
-  function() {alert("hi");});
