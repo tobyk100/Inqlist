@@ -1,5 +1,5 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?> assets/css/home.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/home.css"/>
 </head>
