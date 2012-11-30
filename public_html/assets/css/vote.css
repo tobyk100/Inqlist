@@ -13,6 +13,15 @@
   background-color:rgb(227,232,233);
   background-color: #555;
   height: 80px;
+  float: left;
+}
+#submit-vote-button
+{
+  height: 80px;
+  width: 80px;
+  margin-left: 921px;
+  background-color:rgb(227,232,233);
+  background-color: #555;
 }
 .ui-slider
 {

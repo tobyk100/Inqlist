@@ -1,7 +1,7 @@
-sumbit_vote = function() {
+function submit_vote_button() {
 	var id = $('.active').attr('id').substring(4);
 	var solved = $('#solution-slider a').css('left').slice(0, - 1);
-	var urgency = $('#urgency-slider ').css('left').slice(0, - 1);
+	var urgency = $('#urgency-slider a').css('left').slice(0, - 1);
 
   $.ajax({
     type: 'POST',
@@ -9,18 +9,16 @@ sumbit_vote = function() {
     data: {
     	'id': id,
     	'sol_num' : solved,
-		'urg_num' : urgency
-	},
+      'urg_num' : urgency
+    },
     dataType: 'json',
     success: function(data) {
-     	alert("success");
+      $('.active:first').next('li').addClass('active');
+      $('.active:first').removeClass('active');
+      var new_val = $('.active:first').find('.text').html();
+      $('.voting-panel .text').html(new_val);
     }
-
-
-    $('.active:first').next('li').addClass('active');
-    $('.active:first').removeClass('active');
-
-    var new_val = $('.active:first').find('.text').html();
-    $('.voting-panel .text').html(new_val);
   });
 }
+$('#submit-vote-sliders').click(//submit_vote_button);
+  function() {alert("hi");});
