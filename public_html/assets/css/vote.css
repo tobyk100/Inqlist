@@ -9,8 +9,21 @@
   z-index: 10000; 
   top: 39px;
 }
-.voting-panel 
+.ui-slider
 {
+  float: left;
+  width: 100px;
+  margin-left: 15px;
+  margin-right: 9px;
+  margin-top: 5px;
+}
+#urgency-slider
+{
+  margin-left: 19px;
+}
+#sliders span
+{
+  float:left;
 }
 .voting-panel .text
 {
@@ -20,10 +33,6 @@
 }
 #sliders {
   float: left;
-  width: 400px;
-}
-
-#solution-slider {
-  margin-top: 30px;
-  margin-bottom: 10px;
+  width: 230px;
+  margin-top: 28px;
 }

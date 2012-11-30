@@ -6,7 +6,15 @@
     lonngngngngngg
   </div>
   <div id="sliders">
-    <span>Solved</span><div id="solution-slider"></div><span>Unsolved</span>
-    <span>Trivial</span><div id="urgency-slider"></div><span>Urgent</span>
+    <div id="solution-slider-wrapper">
+      <span>Solved</span>
+      <div id="solution-slider"></div>
+      <span>Unsolved</span>
+    </div>
+    <div id="urgency-slider-wrapper">
+      <span>Trivial</span>
+      <div id="urgency-slider"></div>
+      <span>Urgent</span>
+    </div>
   </div>
 </li>
