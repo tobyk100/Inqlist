@@ -37,7 +37,6 @@ $(function() {
 
   $('.posts > li').live('click',function() {
     if ( $(this).hasClass('active') ) {
-      $(this).removeClass('active');
       
     } else { 
       $('.posts li').removeClass('active');    

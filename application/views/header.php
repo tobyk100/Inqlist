@@ -11,6 +11,7 @@
   <script type="text/javascript" src="/assets/javascript/home.js"></script>
   <script type="text/javascript" src="/assets/javascript/inqling.js"></script>
   <script type="text/javascript" src="/assets/javascript/solutions.js"></script>
+  <script type="text/javascript" src="/assets/javascript/vote.js"></script>
 
 
 </head>
