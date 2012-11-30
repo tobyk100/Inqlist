@@ -21,4 +21,7 @@ class Main extends CI_Controller {
     $new_inqling = $this->inqling_model->create_inqling($body);
     $this->output->set_output(json_encode($new_inqling));
   }
+  public function create_comment() {
+    
+  }
 }
