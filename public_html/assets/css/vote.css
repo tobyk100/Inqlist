@@ -42,8 +42,9 @@
 .voting-panel .text
 {
   float: left;
-  width: 400px;
-  margin-right: 80px;
+  width: 550px;
+  margin-right: 100px;
+  font-size: 18px;
 }
 #sliders {
   float: left;
