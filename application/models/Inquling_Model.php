@@ -15,10 +15,10 @@ class Inqling_Model extends CI_Model{
 	//Gets all or a particular inquling
 	public function get_inquling($inq_id = -1){
 		if($inq_id === -1){
-			$query = $this->db->get(/*inqling table placeholder*/);
+			$query = $this->db->get('inqulings');
 			return $query->result_array();
 		}else{
-			$query = $this->db->get_where(/*inqling table placeholder*/,array('inqID' => $inq_id));
+			$query = $this->db->get_where('inqulings',array('inqID' => $inq_id));
 		}
 	}
 
@@ -28,14 +28,14 @@ class Inqling_Model extends CI_Model{
 		#Urgency 0-50, Solution 0-100
 		#overall rating = urgency * solution
 		$query = $this->db->order_by("overall_rating", ASC);
-		$query = $this->db->get(/*inqling table placeholder*/,$inq_num, $inq_start);
+		$query = $this->db->get('inqulings',$inq_num, $inq_start);
 		return $query->result_array();			
 	}
 
 	//Gets new inquling based on date
 	public function get_new_inqulings($inq_start = 0, $inq_num = 10){
 		$query = $this->db->order_by("date", ASC);
-		$query = $this->db->get(/*inqling table placeholder*/,$inq_num, $inq_start);
+		$query = $this->db->get('inqulings',$inq_num, $inq_start);
 		return $query->result_array();		
 	}
 
@@ -44,7 +44,7 @@ class Inqling_Model extends CI_Model{
 		#Urgency 0-50, Solution 0-100
 		#overall rating = urgency * solution
 		$query = $this->db->order_by("overall_rating", ASC);
-		$query = $this->db->get(/*inqling table placeholder*/,$inq_num, $inq_start);
+		$query = $this->db->get('inqulings',$inq_num, $inq_start);
 		return $query->result_array();			
 	}
 
@@ -60,10 +60,10 @@ class Inqling_Model extends CI_Model{
 
 		$data = array(
 			'body' => $body,
-			'u_id' => $user,
-			'rating' => 100 * sqrt(2),
-			'url' =>  'http://google.com',
-			'date_created' => date_create()
+			'rating' => sqrt(5000);
+			'date_created' => date_create(),
+			'url' =>  '/assets/something.jpg',
+			'u_id' => $user
 		);
 
 		return $this->db->insert('inqulings', $data);
