@@ -3,8 +3,7 @@
     <div class="text">
       The plots of land adjacent to the highways of LA are bought
       up and used only for billboards, providing
-      no benefit to the community. wha long long long
-      lonngngngngngg
+      no benefit to the community.
     </div>
     <div id="sliders">
       <div id="solution-slider-wrapper">
