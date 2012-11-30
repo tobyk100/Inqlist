@@ -41,10 +41,12 @@ class Votes_model extends CI_Model{
 	}
 
 	public function create_vote($s_num, $u_num, $inq_id){
+		$date_created = date_format(date_create(), 'Y-m-d H:i:sP');
+
 		$data = array(
 			'solution' => $s_num,
 			'urgency' => $u_num,
-			'date_created' => date_create(),
+			'date_created' => $date_created,
 			'u_id' => 1, //Placeholder
 			'inq_id' => $inq_id
 		);

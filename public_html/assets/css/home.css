@@ -109,7 +109,7 @@ h1 {
 .posts {
   float: left;
   width: 1000px; 
-  padding-top: 175px;
+  padding-top: 180px;
 
 
 }
@@ -163,7 +163,7 @@ img.left{
 }
 
 .posts li.active .vote-bg, .posts li.active img {
-  opacity: 0;
+
 }
 
 .posts li img {
@@ -179,7 +179,7 @@ img.left{
   position: fixed !important;
   display: block;
   z-index: 10000;
-  width: 900px;
+  width: 1000px;
   top: 148px;
   background-color: #fff;
   height: 80px;
