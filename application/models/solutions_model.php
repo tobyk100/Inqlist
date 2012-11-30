@@ -9,9 +9,11 @@ class Solutions_model extends CI_Model{
 	}
 
 	public function get_solutions($inq_id, $sol_start = 0, $sol_num = 3){
-		$query = $this->db->order_by('rating', DESC);
-		$query = $this->db->get_where('solutions', array('inqID' => $inqID), $sol_num, $sol_start);
-		return $query->result_array();
+		$query = $this->db->select('id, body');
+		$query = $this->db->order_by('up_votes', 'DESC');		
+		$query = $this->db->get_where('solutions', array('inq_id' => $inq_id), $sol_num, $sol_start);
+		$results = $query->result_array();
+		return $results;
 	}
 
 	public function create_solution($body, $inq_id){
