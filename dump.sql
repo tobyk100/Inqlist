@@ -50,10 +50,11 @@ CREATE TABLE `inqlings` (
   `date_created` datetime DEFAULT NULL,
   `u_id` int(11) DEFAULT NULL,
   `rating` double DEFAULT NULL,
+  `pub_rating` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `u_id` (`u_id`),
   CONSTRAINT `inqlings_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,4 +130,4 @@ CREATE TABLE `votes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-30  8:23:36
+-- Dump completed on 2012-11-30  8:36:21
