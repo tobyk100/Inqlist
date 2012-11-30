@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div id="submit-vote-button"></div>
+  <div id="submit-vote-button"><img src='/assets/images/vote_checkmark.png' /></div>
 </li>
 <script type="text/javascript">
 $(document).ready(
