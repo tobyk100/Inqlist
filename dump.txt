@@ -1,8 +1,0 @@
-PRAGMA foreign_keys=OFF;
-BEGIN TRANSACTION;
-CREATE TABLE inqling (id PRIMARY KEY, body varchar(255), rating real, date_created datetime, url varchar(255), u_id int, FOREIGN KEY (u_id) REFERENCES user(id));
-CREATE TABLE users (id PRIMARY KEY, username varchar(255), password varchar(255), email varchar(255), url varchar(255), date_created datetime);
-CREATE TABLE votes (id PRIMARY KEY, solution int, urgency int, u_id int, inq_id int, date_creted datetime, FOREIGN KEY (u_id) REFERENCES user(id), FOREIGN KEY (inq_id) REFERENCES inqling(id));
-CREATE TABLE solutions (id PRIMARY KEY, body VARCHAR(255), up_votes int, down_votes int, iapp_flag boolean, date_created datetime, u_id int, inq_id int, FOREIGN KEY (u_id) REFERENCES user(id), FOREIGN KEY (inq_id) REFERENCES inqling(id));
-CREATE TABLE comments (id PRIMARY KEY, body varchar(255), date_created datetime, s_id int, u_id int, FOREIGN KEY (s_id) REFERENCES solutions(id), FOREIGN KEY (u_id) REFERENCES user(id));
-COMMIT;
