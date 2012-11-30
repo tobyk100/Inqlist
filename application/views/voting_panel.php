@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <button id="submit-vote-button"></button>
+  <div id="submit-vote-button"></div>
 </li>
 <script type="text/javascript">
 $(document).ready(
@@ -39,10 +39,11 @@ $(document).ready(
         },
         dataType: 'json',
         success: function(data) {
-          $('.inqling.active:first').next('li').addClass('active');
-          $('inqling.active:first').removeClass('active');
-          var new_val = $('inqling.active:first').find('.text').html();
-          $('.voting-panel .text').html(new_val);
+          var inq = $('.inqling.active');
+          inq.next('li').addClass('active');
+          inq.removeClass('active');
+          var new_val = $('.inqling.active').find('.text').html();
+          $('.voting-panel.text').html(new_val);
         }
       });
     })
