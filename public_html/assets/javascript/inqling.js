@@ -1,11 +1,11 @@
-function add_inqling() {
+add_inqling = function() {
   $.ajax({
     type: 'POST',
-    url: '/index.php/main',
-    data: {body: 'new inqling' },
+    url: '/index.php/main/create_inqling',
+    data: {'body': 'new inqling' },
     dataType: 'json',
     success: function(response) {
-      alert("it works");
+      alert(response);
     }
-  }
+  });
 }
