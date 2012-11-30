@@ -13,7 +13,10 @@ create_solution = function() {
   $.ajax({
     type: 'POST',
     url: '/index.php/main/create_inqling',
-    data: {'body': 'comment body' },
+    data: {
+      'body': 'comment body', 
+      'inqling': '1'
+    },
     dataType: 'json',
     success: function(data) {
       alert(data);

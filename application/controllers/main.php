@@ -24,4 +24,7 @@ class Main extends CI_Controller {
   public function create_comment() {
     
   }
+  public function create_solution() {
+    
+  }
 }
