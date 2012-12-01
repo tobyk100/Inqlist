@@ -22,6 +22,15 @@ class Inqling_Model extends CI_Model{
 		}
 	}
 
+	//Get ranked inqulings based on algorithm that we do not know
+	//Less urgent
+	public function get_rank_inqulings($inq_start = 0, $inq_num = 10){
+		#Urgency 0-50, Solution 0-100
+		#overall rating = urgency * solution
+		$query = $this->db->order_by("overall_rating", ASC);
+		$query = $this->db->get(/*inqling table placeholder*/,$inq_start, $inq_num);			
+	}
+
 	//Gets new inquling based on date
 	public function get_new_inqulings($inq_start = 0, $inq_num = 10){
 		$query = $this->db->order_by("date", ASC);
