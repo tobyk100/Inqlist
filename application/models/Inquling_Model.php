@@ -1,0 +1,46 @@
+<?php
+
+class Inqling_Model extends CI_Model{
+	/**
+	* Model for Inqulings
+	* Various db calls for different lists of inqulings
+	*
+	*
+	**/
+	public function __construct(){
+		$this->load->database();
+	}
+
+
+	//Gets all or a particular inquling
+	public function get_inquling($inq_id = -1){
+		if($inq_id === -1){
+			$query = $this->db->get(/*inqling table placeholder*/);
+			return $query->result_array();
+		}else{
+			$query = $this->db->get_where(/*inqling table placeholder*/,array('inqID' => $inq_id));
+		}
+	}
+
+	//Gets new inquling based on date
+	public function get_new_inqulings($inq_start = 0, $inq_num = 10){
+		$query = $this->db->order_by("date", ASC);
+		$query = $this->db->get(/*inqling table placeholder*/,$inq_start, $inq_num);		
+	}
+
+	//Gets top inqulings based on algorithm that we do not know
+	public function get_top_inqulings($inq_start = 0, $inq_num = 10){
+		#Urgency 0-50, Solution 0-100
+		#overall rating = urgency * solution
+		$query = $this->db->order_by("overall_rating", ASC);
+		$query = $this->db->get(/*inqling table placeholder*/,$inq_start, $inq_num);			
+	}
+
+	//Gets trendign inqulings based on algo that we don't know either
+	public function get_trending_inqulings($inq_id = -1){
+		$query = $this->db->order_by("trend_rank", ASC);
+		$query = $this->db->get(/*inqling table placeholder*/,$inq_start, $inq_num);
+	}
+}
+
+?>
