@@ -39,7 +39,7 @@
       </ul>
 
     <?php foreach($inqlings as $inqling){ ?>
-      <li><div class="text"><?=$inqling['body'] ?> </div> <div class="vote-bg"><span class="vote-text">9.2</span></div> <img src="/assets/images/user.png"></li>  
+      <li><div class="text"><?php echo $inqling['body']; ?> </div> <div class="vote-bg"><span class="vote-text">9.2</span></div> <img src="/assets/images/user.png"></li>  
     <?php } ?>
     
 
