@@ -107,6 +107,9 @@ h1 {
 .posts {
   float: left;
   width: 100%;
+  padding-top: 175px;
+
+
 }
 
 .posts > li {
@@ -161,19 +164,24 @@ h1 {
 
 
 .comments {
+  position: fixed !important;
   display: block;
+  z-index: 10000;
+  width: 80% !important;
+  top: 148px;
+  background-color: #fff;
+  height: 80px;
+
 }
 
 .comments li {
-  position: absolute !important;
   background-color: rgb(237,242,243);
   margin-left: 5%;
   margin-bottom: 3px; 
   height: 25px;
   width: 95%;  
   display:table;
-  top: 140px;
-}
+  }
 
 .vote-bg {
   float: right;
