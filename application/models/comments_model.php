@@ -20,7 +20,7 @@ class Comments_model extends CI_Model{
 			'date_created' => date_create(),
 			's_id' => $sol_id,
 			'u_id' => 0
-		)
+		);
 	}
 
 }
