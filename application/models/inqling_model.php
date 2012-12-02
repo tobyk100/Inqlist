@@ -61,7 +61,7 @@ class Inqling_model extends CI_Model{
 		$data = array(
 			'body' => $body,
 			'rating' => sqrt(5000),
-			'pub_rating' => sqrt(5000) / (10 * sqrt(2)),
+			'pub_rating' => round(sqrt(5000) / (10 * sqrt(2)),2),
 			'date_created' => $date_created,
 			'url' =>  '/assets/images/something.jpg',
 			'u_id' => 1
