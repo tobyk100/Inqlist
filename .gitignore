@@ -1,3 +1,4 @@
 db.sdb
 application/config/database.php
 application/logs
+application\config\database.php
