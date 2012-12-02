@@ -9,7 +9,7 @@ class Votes_model extends CI_Model{
 	}
 
 	public function get_votes($inq_id, $v_start = 0, $v_num = 5){
-		$query = $this->db->order_by('date', DESC);
+		$query = $this->db->order_by('date', "DESC");
 		$query = $this->db->get_where('votes', array('inqID' => $inqID), $v_num, $v_start);
 		return $query->result_array();
 	}
@@ -35,6 +35,11 @@ class Votes_model extends CI_Model{
 		}
 	}
 
+	public function calculate_public_rating($inq_id){
+		$pub_rating = $calculate_rating($inq_id) / (10 * sqrt(2));
+		return round($pub_rating, 1);
+	}
+
 	public function create_vote($s_num, $u_num, $inq_id){
 		$data = array(
 			'solution' => $s_num,
@@ -50,7 +55,8 @@ class Votes_model extends CI_Model{
 
 	private function update_rating($inq_id){
 		$data = array(
-			'rating' => calculate_rating($inq_id)
+			'rating' => calculate_rating($inq_id),
+			'pub_rating' => calculate_public_rating($inq_id)
 		);
 
 		$this->db->where('id', $inq_id);
