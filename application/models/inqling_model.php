@@ -27,15 +27,15 @@ class Inqling_model extends CI_Model{
 	public function get_rank_inqlings($inq_start = 0, $inq_num = 10){
 		#Urgency 0-50, Solution 0-100
 		#overall rating = urgency * solution
-		$query = $this->db->order_by("overall_rating", "ASC");
+		$query = $this->db->order_by("rating", "ASC");
 		$query = $this->db->get('inqlings',$inq_num, $inq_start);
 		return $query->result_array();			
 	}
 
 	//Gets new inquling based on date
 	public function get_new_inqlings($inq_start = 0, $inq_num = 10){
-		$query = $this->db->order_by("date", "ASC");
-		$query = $this->db->get('inqlings',$inq_num, $inq_start);
+		$query = $this->db->order_by("date_created", "ASC");
+		$query = $this->db->get('inqlings');
 		return $query->result_array();		
 	}
 
@@ -43,7 +43,7 @@ class Inqling_model extends CI_Model{
 	public function get_top_inqlings($inq_start = 0, $inq_num = 10){
 		#Urgency 0-50, Solution 0-100
 		#overall rating = urgency * solution
-		$query = $this->db->order_by("overall_rating", "ASC");
+		$query = $this->db->order_by("ating", "ASC");
 		$query = $this->db->get('inqlings',$inq_num, $inq_start);
 		return $query->result_array();			
 	}
