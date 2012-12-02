@@ -179,7 +179,7 @@ h1 {
 }
 
 .comments {
-  display: none;
+  display: block;
 }
 
 .comments li {
