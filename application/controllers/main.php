@@ -28,9 +28,10 @@ class Main extends CI_Controller {
     $this->output->set_output(json_encode($new_inqling));
   }
 
-  public function get_solutions($inq_id) {
+  public function get_solutions() {
+    $inq_id = $this->input->post('id');
     $solutions = $this->solutions_model->get_solutions($inq_id);
-    return solutions;
+    $this->output->set_output(json_encode($solutions));
   }
   
   public function create_solution() {
