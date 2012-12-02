@@ -9,5 +9,7 @@
   <script type="text/javascript" src="/assets/javascript/jquery-ui.js"></script>
   <script type="text/javascript" src="/assets/javascript/home.js"></script>
   <script type="text/javascript" src="/assets/javascript/inqling.js"></script>
+  <script type="text/javascript" src="/assets/javascript/solutions.js"></script>
+
 
 </head>

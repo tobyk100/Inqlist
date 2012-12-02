@@ -30,7 +30,9 @@ $(function() {
 
   $('.posts > li').live('click',function() {
     var new_val = $(this).find('.text').html();
+    var id = $(this).attr('id').substring(4);
     $('.voting-panel .text').html(new_val);
+    disp_solutions(id);
   });  
 
   $('.posts > li').live('click',function() {
