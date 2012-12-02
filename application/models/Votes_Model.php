@@ -13,7 +13,7 @@ class Votes_Model extends CI_Model{
 
 	public function get_votes($inq_id, $v_start = 0, $v_num = 5){
 		$query = $this->db->order_by('date', DESC);
-		$query = $this->db->get_where(/*vote table*/, array('inqID' => $inqID), $v_num, $v_start);
+		$query = $this->db->get_where('votes', array('inqID' => $inqID), $v_num, $v_start);
 		return $query->result_array();
 	}
 
@@ -22,30 +22,32 @@ class Votes_Model extends CI_Model{
 		$sol_total = 0;
 		$urg_total = 0;
 
-		foreach($votes as $vote){
-			$sol_total += $vote['solution'];
-			$urg_total += $vote['urgency'];
+		if(count($votes) === 0){
+			return sqrt(5000); //Default value
+		}else{
+
+			foreach($votes as $vote){
+				$sol_total += $vote['solution'];
+				$urg_total += $vote['urgency'];
+			}
+
+			$sol_avg = $sol_total / count($votes);
+			$urg_avg = $urg_total / count($votes);
+
+			return sqrt(pow(100 - $sol_total,2) + pow(100 - $urg_total,2));
 		}
-
-		$sol_avg = $sol_total / count($votes);
-		$urg_avg = $urg_total / count($votes);
-
-		return sqrt(pow(100 - $sol_total,2) + pow(100 - $urg_total,2));
 	}
 
-	public function create_solution($inq_id, $solution, $user){
-
+	public function create_votes($inq_id, $s_num, $u_num){
 		$data = array(
-			'inq_id' => $inqID,
-			'body' => $solution,
-			'up_votes' => 1,
-			'down_votes' => 0,
-			'u_id' => $user,
-			'inapp_flag' => false
-
+			'solution' => $s_num,
+			'urgency' => $u_num,
+			'date_created' => date_create(),
+			'u_id' => 0, //Placeholder
+			'inq_id' => $inq_id
 		);
 
-		return $this->db->insert('solutions', $data);
+		return $this->db->insert('votes', $data);
 	}
 
 }	
