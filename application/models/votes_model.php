@@ -31,7 +31,7 @@ class Votes_model extends CI_Model{
 			$sol_avg = $sol_total / count($votes);
 			$urg_avg = $urg_total / count($votes);
 
-			return sqrt(pow(100 - $sol_total,2) + pow(100 - $urg_total,2));
+			return sqrt(pow($sol_total - 100,2) + pow($urg_total - 100,2));
 		}
 	}
 
