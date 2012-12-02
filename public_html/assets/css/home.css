@@ -1,5 +1,6 @@
 header {
-  background-color: rgb(237,242,243);
+  /*background-color: rgb(237,242,243);*/
+  background-color: #FFF;
   height: 40px;  
   position: fixed;
   top: 0;
@@ -75,7 +76,8 @@ h1 {
   border-radius: 3px;
   padding: 3px;
   position: relative;
-  top: 6px;
+  top: 7px;
+  margin-left: 5px;
   font-size: 14px;
 }
 

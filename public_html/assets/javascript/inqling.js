@@ -5,7 +5,9 @@ add_inqling = function(inqlink) {
     data: {'body': inqlink },
     dataType: 'json',
     success: function(data) {
-      alert(data);
+      var body = data.body;
+      var rating = data.pub_rating;
+      $('<li><div class="text">'+body+'</div><div class="vote-bg"><span class="vote-text">'+rating+'</span></div><img src="/assets/images/user.png"></li>').insertAfter('.voting-panel');
     }
   });
 }

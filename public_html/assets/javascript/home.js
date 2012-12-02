@@ -15,7 +15,19 @@ $(function() {
     add_inqling(new_post);
   });
 
+  $('#form').keypress(function(event) {
+    if (event.which == 13) {
+      var new_post = $('#form').val();
+      add_inqling(new_post);
+    }
+  });
+
   $('.posts > li').live('click',function() {
+    var new_val = $(this).val();
+    $('#voting-panel .text').html(new_val);
+  });  
+
+  /*$('.posts > li').live('click',function() {
     if ( $(this).hasClass('active') ) {
       $(this).removeClass('active');
       $(this).next('ul').css({'display':'none'});
@@ -25,7 +37,7 @@ $(function() {
       $(this).addClass('active');
       $(this).next('ul').css({'display':'block'});
     }
-  });
+  });*/
 
   $('.sort li').live('click',function() {
     $('.sort li').removeClass('active');
