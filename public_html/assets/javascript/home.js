@@ -38,13 +38,15 @@ $(function() {
   $('.posts > li').live('click',function() {
     if ( $(this).hasClass('active') ) {
       $(this).removeClass('active');
-      $(this).next('ul').css({'display':'none'});
+      
     } else { 
-      $('.comments').css({'display':'none'});
       $('.posts li').removeClass('active');    
       $(this).addClass('active');
-      $(this).next('ul').css({'display':'block'});
     }
+    $('.comments').html('');
+
+
+
   });
 
   $('.sort li').live('click',function() {
