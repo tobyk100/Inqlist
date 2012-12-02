@@ -62,7 +62,7 @@ class Inqling_Model extends CI_Model{
 			'body' => $body,
 			'rating' => sqrt(5000),
 			'date_created' => date_create(),
-			'url' =>  '/assets/something.jpg',
+			'url' =>  '/assets/images/something.jpg',
 			'u_id' => 0
 		);
 
