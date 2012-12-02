@@ -17,7 +17,7 @@ class Solutions_model extends CI_Model{
 	public function create_solution($body, $inq_id){
 
 		$data = array(			
-			'body' => $solution,
+			'body' => $body,
 			'up_votes' => 1,
 			'down_votes' => 0,
 			'inapp_flag' => false,

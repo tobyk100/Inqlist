@@ -14,6 +14,7 @@ class Main extends CI_Controller {
 
     $data['inqlings'] = $this->inqling_model->get_new_inqlings();
 
+
 		$this->load->view('welcome_message', $data);		
 		$this->load->view('footer');
 	}
@@ -26,7 +27,12 @@ class Main extends CI_Controller {
     $new_inqling = $this->inqling_model->create_inqling($body);
     $this->output->set_output(json_encode($new_inqling));
   }
-  /*
+
+  public function get_solutions($inq_id) {
+    $solutions = $this->solutions_model->get_solutions($inq_id);
+    return solutions;
+  }
+  
   public function create_solution() {
     $body = $this->input->post('body');
     $inqling_id = $this->input->post('inqling');
@@ -38,5 +44,5 @@ class Main extends CI_Controller {
     $inqling_id = $this->input->post('inqling');
     $new_solution = $this->solution_model->create_solution($body, $inqling_id);
     $this->output->set_output(json_encode($new_solution));
-  }*/
+  }
 }
