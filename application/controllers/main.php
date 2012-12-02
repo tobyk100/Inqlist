@@ -12,7 +12,7 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('header');
 
-    $data['inqlings'] = $this->get_inqlings();
+    $data['inqlings'] = $this->inqling_model->get_new_inqlings();
 
 		$this->load->view('welcome_message', $data);		
 		$this->load->view('footer');
