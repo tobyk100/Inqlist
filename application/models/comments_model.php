@@ -1,11 +1,8 @@
 <?php
 
-class Comments_Model extends CI_Model{
+class Comments_model extends CI_Model{
 	/**
-	* Model for Inqulings
-	* Various db calls for different lists of inqulings
-	*
-	*
+	* Model for comments
 	**/
 	public function __construct(){
 		$this->load->database();

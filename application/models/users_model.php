@@ -1,6 +1,6 @@
 <?php
 
-class Users_Model extends CI_Model{
+class Users_model extends CI_Model{
 	/**
 	* Model for Users
 	* Various db calls for different lists of inqulings

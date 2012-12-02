@@ -6,5 +6,6 @@
 
   <script type="text/javascript" src="/assets/javascript/jquery.js"></script>
   <script type="text/javascript" src="/assets/javascript/home.js"></script>
+  <script type="text/javascript" src="/assets/javascript/inqling.js"></script>
 
 </head>
