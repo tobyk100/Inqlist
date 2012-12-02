@@ -8,6 +8,7 @@ header {
   width: 100%;
   z-index: 100;
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  z-index: 99999999999999;
 }
 
 header ul {
@@ -106,6 +107,7 @@ h1 {
 .posts {
   float: left;
   width: 100%;
+  padding-top: 100px;
 }
 
 .posts > li {
@@ -122,11 +124,33 @@ h1 {
   -o-transition: all .3s;
 }
 
-.posts li.active {
+/*.active {
   height: 80px;
-  /*background-color:rgb(227,232,233);*/
+  background-color:rgb(227,232,233);
   background-color: #555;
   color: #FFF;
+}*/
+
+#solution-slider {
+  width: 100px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.ui-widget-content {
+  height: 5px !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  height:10px !important;
+  width: 10px !important;
+  outline: none;
+  background-color:rgb(237,242,243) !important; /*rgb(170,35,0) rgb(237,242,243);*/ 
+  border: none !important;/*1px solid #FFF !important;*/
+}
+
+.posts li.active {
+  background-color:rgb(227,232,233);  
 }
 
 .posts li.active .vote-bg, .posts li.active img {
@@ -139,6 +163,19 @@ h1 {
   -moz-transition: all .3s;
   -webkit-transition: all .3s;
   -o-transition: all .3s;  
+}
+
+.voting-panel, .sort {
+  position: fixed !important;
+  width: 80% !important;
+  height: 80px;
+  background-color:rgb(227,232,233);
+  background-color: #555;
+  color: #FFF;
+  border-top: 30px solid #FFF; 
+  z-index: 10000; 
+  top: 39px;
+  display: table;
 }
 
 .comments {

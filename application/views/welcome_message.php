@@ -19,7 +19,7 @@
 
 <div id="main" class="container">
   
-  <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+  <!--<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>-->
 
   <ul class="sort">
     <li class="active">Trending</li>
@@ -27,10 +27,9 @@
     <li>New</li>    
   </ul>
 
+  <li class="voting-panel active"><div class="text">The plots of land adjacent to the highways of LA are bought up and used only for billboards, providing no benefit to the community.</div><div id="solution-slider"></div><div id="urgency-slider"></div></li>  
 
   <ul class="posts">
-    <li class="voting-panel active"><div class="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</div></li>  
-
     <li><div class="text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</div> <div class="vote-bg"><span class="vote-text">9.2</span></div> <img src="/assets/images/user.png"></li>  
       <ul class="comments">
         <li><div class="comment">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</div><div class="arrow-up">&#x25B2;</div><div class="arrow-down">&#x25BC;</div></li>

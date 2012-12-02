@@ -1,5 +1,11 @@
 $(function() {
 
+
+  $('#solution-slider').slider();
+  $('#urgency-slider').slider();
+
+
+
   $('#form').focus(function() {
     if ($(this).val() == 'Enter your Inqling') {  
       $(this).val('');
@@ -23,11 +29,11 @@ $(function() {
   });
 
   $('.posts > li').live('click',function() {
-    var new_val = $(this).val();
-    $('#voting-panel .text').html(new_val);
+    var new_val = $(this).find('.text').html();
+    $('.voting-panel .text').html(new_val);
   });  
 
-  /*$('.posts > li').live('click',function() {
+  $('.posts > li').live('click',function() {
     if ( $(this).hasClass('active') ) {
       $(this).removeClass('active');
       $(this).next('ul').css({'display':'none'});
@@ -37,7 +43,7 @@ $(function() {
       $(this).addClass('active');
       $(this).next('ul').css({'display':'block'});
     }
-  });*/
+  });
 
   $('.sort li').live('click',function() {
     $('.sort li').removeClass('active');
