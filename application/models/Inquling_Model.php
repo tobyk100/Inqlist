@@ -60,11 +60,13 @@ class Inqling_Model extends CI_Model{
 
 		$data = array(
 			'body' => $body,
-			'user' => $user,
+			'u_id' => $user,
 			'rating' => 100 * sqrt(2),
 			'url' =>  'http://google.com',
 			'date_created' => date_create()
 		);
+
+		return $this->db->insert('inqulings', $data);
 	}
 }
 

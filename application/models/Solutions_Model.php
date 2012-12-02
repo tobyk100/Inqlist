@@ -17,11 +17,16 @@ class Solutions_Model extends CI_Model{
 		return $query->result_array();
 	}
 
-	public function create_solution($inqID, $solution){
+	public function create_solution($inqID, $solution, $user){
 
 		$data = array(
-			'id' => $inqID,
-			'body' => $solution
+			'inq_id' => $inqID,
+			'body' => $solution,
+			'up_votes' => 1,
+			'down_votes' => 0,
+			'u_id' => $user,
+			'inapp_flag' => false
+
 		);
 
 		return $this->db->insert('solutions', $data);
