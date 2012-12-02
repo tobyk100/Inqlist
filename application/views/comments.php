@@ -1,1 +1,2 @@
-<ul class="comments"></ul>
+<ul class="comments">
+</ul>
