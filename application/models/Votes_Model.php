@@ -30,7 +30,7 @@ class Votes_Model extends CI_Model{
 		$sol_avg = $sol_total / count($votes);
 		$urg_avg = $urg_total / count($votes);
 
-		return 0;
+		return sqrt(pow(100 - $sol_total,2) + pow(100 - $urg_total,2));
 	}
 
 	public function create_solution($inq_id, $solution, $user){
