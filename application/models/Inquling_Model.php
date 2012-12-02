@@ -56,14 +56,14 @@ class Inqling_Model extends CI_Model{
 		}
 	}
 
-	public function create_inquling($body, $user){
+	public function create_inquling($body){
 
 		$data = array(
 			'body' => $body,
 			'rating' => sqrt(5000);
 			'date_created' => date_create(),
 			'url' =>  '/assets/something.jpg',
-			'u_id' => $user
+			'u_id' => 0
 		);
 
 		return $this->db->insert('inqulings', $data);

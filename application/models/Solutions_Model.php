@@ -17,7 +17,7 @@ class Solutions_Model extends CI_Model{
 		return $query->result_array();
 	}
 
-	public function create_solution($inq_id, $body, $user){
+	public function create_solution($body, $inq_id){
 
 		$data = array(			
 			'body' => $solution,
@@ -25,7 +25,7 @@ class Solutions_Model extends CI_Model{
 			'down_votes' => 0,
 			'inapp_flag' => false,
 			'date_created' => date_create(),
-			'u_id' => $user,
+			'u_id' => 0
 			'inq_id' => $inq_id
 		);
 

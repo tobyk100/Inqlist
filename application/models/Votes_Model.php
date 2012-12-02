@@ -38,7 +38,7 @@ class Votes_Model extends CI_Model{
 		}
 	}
 
-	public function create_votes($inq_id, $s_num, $u_num){
+	public function create_vote($s_num, $u_num, $inq_id){
 		$data = array(
 			'solution' => $s_num,
 			'urgency' => $u_num,
