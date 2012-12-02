@@ -58,12 +58,13 @@ class Inqling_model extends CI_Model{
 
 	public function create_inqling($body){
     $date_created = date_format(date_create(), 'Y-m-d H:i:sP');
+    $random_pic = rand(1,25);
 		$data = array(
 			'body' => $body,
 			'rating' => sqrt(5000),
 			'pub_rating' => round(sqrt(5000) / (10 * sqrt(2)),2),
 			'date_created' => $date_created,
-			'url' =>  '/assets/images/something.jpg',
+			'url' =>  '/assets/images/profile_pics/' . $random_pic . ".jpg",
 			'u_id' => 1
 		);
 
