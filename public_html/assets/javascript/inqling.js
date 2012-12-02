@@ -1,8 +1,8 @@
-add_inqling = function() {
+add_inqling = function(inqlink) {
   $.ajax({
     type: 'POST',
     url: '/index.php/main/create_inqling',
-    data: {'body': 'new inqling' },
+    data: {'body': inqlink },
     dataType: 'json',
     success: function(data) {
       alert(data);

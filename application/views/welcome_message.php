@@ -3,15 +3,15 @@
 <header>
   <div class="container">
     <img id="logo" src="/assets/images/logo.png" />
-    <input id="search" value="Search an Idea or Person">
+    <input id="form" value="Enter your Inqling">
+    <button id="post">Post</button>
+
     <ul>
-      <li>Write Anonymously</li>
-      <li>Help</li>
-      <li>Filter
+      <!--<li>Filter
         <div id="dropdown">
         Hello
         </div>
-      </li>
+      </li>-->
       <li>Login</li>
     <ul>
   </div>  

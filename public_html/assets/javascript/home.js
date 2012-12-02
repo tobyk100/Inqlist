@@ -1,13 +1,18 @@
 $(function() {
 
-  $('#search').focus(function() {
-    if ($(this).val() == 'Search an Idea or Person') {  
+  $('#form').focus(function() {
+    if ($(this).val() == 'Enter your Inqling') {  
       $(this).val('');
     }
   }).blur(function() {
     if ($(this).val() == '') {      
-      $(this).val('Search an Idea or Person');
+      $(this).val('Enter your Inqling');
     }
+  });
+
+  $('#post').live('click',function() {
+    var new_post = $('#form').val();
+    add_inqling(new_post);
   });
 
   $('.posts > li').live('click',function() {
@@ -25,6 +30,14 @@ $(function() {
   $('.sort li').live('click',function() {
     $('.sort li').removeClass('active');
     $(this).addClass('active');
+  });
+
+  $('#filter').live('click', function() {
+    if($(this).hasClass('open')) {
+      $(this).removeClass('open');
+    } else {
+      $(this).addClass('open');
+    }
   });
 
 });
