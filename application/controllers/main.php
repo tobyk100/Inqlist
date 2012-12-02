@@ -7,6 +7,7 @@ class Main extends CI_Controller {
     $this->load->model('inqling_model');
     $this->load->model('solutions_model');
     $this->load->model('comments_model');
+    $this->load->model('votes_model');
   }
 	public function index()
 	{
@@ -26,6 +27,13 @@ class Main extends CI_Controller {
     $body = $this->input->post('body');
     $new_inqling = $this->inqling_model->create_inqling($body);
     $this->output->set_output(json_encode($new_inqling));
+  }
+
+  public function submit_vote(){
+    $sol_num = $this->input->post('sol_num');
+    $urg_num = $this->input->post('urg_num');
+    $inq_id = $this->input->post('id');
+    $this->votes_model->create_vote($sol_num, $urg_num, $inq_id);
   }
 
   public function get_solutions() {
