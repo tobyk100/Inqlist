@@ -1,6 +1,6 @@
 <?php
 
-class Inqling_Model extends CI_Model{
+class Inqling_model extends CI_Model{
 	/**
 	* Model for Inqlings
 	* Various db calls for different lists of inqulings

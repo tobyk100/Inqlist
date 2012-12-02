@@ -1,6 +1,6 @@
 <?php
 
-class Solutions_Model extends CI_Model{
+class Solutions_model extends CI_Model{
 	/**
 	* Model for Solutions
 	**/

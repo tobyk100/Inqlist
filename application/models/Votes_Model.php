@@ -1,6 +1,6 @@
 <?php
 
-class Votes_Model extends CI_Model{
+class Votes_model extends CI_Model{
 	/**
 	* Model for Votes
 	**/
