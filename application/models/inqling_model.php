@@ -66,7 +66,11 @@ class Inqling_model extends CI_Model{
 			'u_id' => 1
 		);
 
-		return $this->db->insert('inqlings', $data);
+	 	$this->db->insert('inqlings', $data);
+
+	 	$query = $this->db->order_by("id", DESC);
+	 	$query = $this->db->get('inqlings', 1, 0);
+	 	return $query->row_array();
 	}
 }
 
