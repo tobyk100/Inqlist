@@ -50,6 +50,14 @@ class Votes_Model extends CI_Model{
 		return $this->db->insert('votes', $data);
 	}
 
+	private function update_rating($inq_id){
+		$data = array(
+			'rating' => calculate_rating($inq_id)
+		);
+
+		$this->db->where('id', $inq_id);
+	}
+
 }	
 
 ?>
