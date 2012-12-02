@@ -9,7 +9,7 @@ class Comments_model extends CI_Model{
 	}
 
 	public function get_comments($sol_id, $c_start, $c_num){
-		$query = $this->db->order_by('date', DESC);
+		$query = $this->db->order_by('date', "DESC");
 		$query = $this->db->get_where('comments', array('s_id' => $sol_id), $c_num, $c_start);
 	}
 
@@ -19,7 +19,7 @@ class Comments_model extends CI_Model{
 			'body' => $body,
 			'date_created' => date_create(),
 			's_id' => $sol_id,
-			'u_id' => 0
+			'u_id' => 1
 		);
 	}
 

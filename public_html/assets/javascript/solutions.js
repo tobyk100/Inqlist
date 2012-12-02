@@ -11,3 +11,15 @@ disp_solutions = function() {
     }
   });
 }
+
+disp_solutions = function() {
+  $.ajax({
+    type: 'POST',
+    url: '/index.php/main/upvote_solution',
+    data: {'id': $('this').attr('id')},
+    dataType: 'json',
+    success: function(data) {
+      
+    }
+  });
+}

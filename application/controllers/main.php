@@ -33,6 +33,18 @@ class Main extends CI_Controller {
     $solutions = $this->solutions_model->get_solutions($inq_id);
     $this->output->set_output(json_encode($solutions));
   }
+
+  public function upvote_solution(){
+    $s_id = $this->input->post('id');
+    $out = $this->solutions_model->add_vote($s_id);
+    $this->output->set_output(json_encode($out));
+  }
+
+  public function downvote_solution(){
+    $s_id = $this->input->post('id');
+    $out = $this->solutions_model->sub_vote($s_id);
+    $this->output->set_output(json_encode($out));
+  }
   
   public function create_solution() {
     $body = $this->input->post('body');

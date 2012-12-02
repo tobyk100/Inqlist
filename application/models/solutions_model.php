@@ -37,6 +37,7 @@ class Solutions_model extends CI_Model{
 
 		$this->db->where('id', $v_id);
 		$this->db->update('votes', $solution);
+		return "Vote successful";
 	}
 
 	public function sub_vote($v_id){
@@ -47,6 +48,7 @@ class Solutions_model extends CI_Model{
 
 		$this->db->where('id', $v_id);
 		$this->db->update('votes', $solution);
+		return "Vote successful";
 	}
 
 	public function solution_ratio($v_id){
