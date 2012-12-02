@@ -179,7 +179,7 @@ img.left{
   position: fixed !important;
   display: block;
   z-index: 10000;
-  width: 1000px;
+  width: 900px;
   top: 148px;
   background-color: #fff;
   height: 80px;

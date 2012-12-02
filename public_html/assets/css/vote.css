@@ -2,12 +2,17 @@
   position: fixed !important;
   width: 1000px;
   height: 80px;
-  background-color:rgb(227,232,233);
-  background-color: #555;
   color: #FFF;
   border-top: 30px solid #FFF; 
   z-index: 10000; 
   top: 39px;
+}
+#text-and-sliders
+{
+  width: 900px;
+  background-color:rgb(227,232,233);
+  background-color: #555;
+  height: 80px;
 }
 .ui-slider
 {
@@ -28,8 +33,8 @@
 .voting-panel .text
 {
   float: left;
-  width: 500px;
-  margin-right: 50px;
+  width: 400px;
+  margin-right: 80px;
 }
 #sliders {
   float: left;
