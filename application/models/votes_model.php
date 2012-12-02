@@ -45,7 +45,7 @@ class Votes_model extends CI_Model{
 			'solution' => $s_num,
 			'urgency' => $u_num,
 			'date_created' => date_create(),
-			'u_id' => 0, //Placeholder
+			'u_id' => 1, //Placeholder
 			'inq_id' => $inq_id
 		);
 

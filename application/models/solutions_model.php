@@ -17,12 +17,12 @@ class Solutions_model extends CI_Model{
 	public function create_solution($body, $inq_id){
 
 		$data = array(			
-			'body' => $solution,
+			'body' => $body,
 			'up_votes' => 1,
 			'down_votes' => 0,
 			'inapp_flag' => false,
 			'date_created' => date_create(),
-			'u_id' => 0,
+			'u_id' => 1,
 			'inq_id' => $inq_id
 		);
 
