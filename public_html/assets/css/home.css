@@ -6,6 +6,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 100;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
 header ul {
@@ -13,6 +14,7 @@ header ul {
 }
 
 header ul li {
+  position: relative;
   float: left;
   padding:12px;
   font-size: 13px;
@@ -21,6 +23,25 @@ header ul li {
 
 #logo {
   float: left;
+}
+
+.sort {
+  float: left;
+  width: 100%;
+}
+
+.sort li {
+  float: left;
+  padding: 0 12px 12px 0;
+  font-size: 13px;
+}
+
+.sort li.active {
+  color: rgb(170,35,0);
+}
+
+h1 {
+  text-align: center;
 }
 
 #search {
@@ -36,17 +57,34 @@ header ul li {
   top: 7px;
   float: left;
   margin-left: 10px;
-  
   padding-right: 30px;
   background-image:url("/assets/images/search.png");
   background-origin: right middle;
   background-position: right;
   background-repeat: no-repeat;
+  display: none;
+}
+
+#dropdown {
+  background-color: #FFF;
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  right: 0px;
+  top: 40px;
+  border: 1px solid rgb(237,242,243);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);  
+  display: none;
 }
 
 #main {
   margin-top: 40px;
   padding-top: 15px;  
+}
+
+.posts {
+  float: left;
+  width: 100%;
 }
 
 .posts > li {
@@ -65,17 +103,34 @@ header ul li {
 
 .posts li.active {
   height: 80px;
-  background-color:rgb(227,232,233);
+  /*background-color:rgb(227,232,233);*/
+  background-color: #555;
+  color: #FFF;
+}
+
+.posts li.active .vote-bg, .posts li.active img {
+  opacity: 0;
 }
 
 .posts li img {
   float: right;
+  transition: all .3s;
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;  
+}
+
+.comments {
+  display: none;
 }
 
 .comments li {
   background-color: rgb(237,242,243);
   margin-left: 5%;
-  margin-bottom: 3px;   
+  margin-bottom: 3px; 
+  height: 25px;
+  width: 95%;  
+  display:table;
 }
 
 .vote-bg {
@@ -83,6 +138,10 @@ header ul li {
   background-color: rgb(170,35,0); /*rgb(180,240,130);*/
   height: 40px;
   width: 40px;
+  transition: all .3s;
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;  
 }
 
 .vote-text {
@@ -94,10 +153,15 @@ header ul li {
   left: 3px;
 }
 
-.text {
-  color: #333;
+.text, .comment {
   font-size: 15px;
   padding: 0 10px;
   display: table-cell;
   vertical-align:middle;
+}
+
+.arrow-up, .arrow-down {
+  float: right;
+  padding: 5px;
+  color: #333;
 }
