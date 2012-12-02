@@ -6,8 +6,9 @@ add_inqling = function(inqlink) {
     dataType: 'json',
     success: function(data) {
       var body = data.body;
+      var id = data.id;
       var rating = data.pub_rating;
-      $('<img class="resize left" src="/assets/images/inqling_pics/i1.jpg"/><li class="inqling"><div class="text">'+body+'</div><div class="vote-bg"><span class="vote-text">5.0</span></div><img class="resize" src="/assets/images/profile_pics/1.jpg"></li>').prependTo('.posts');
+      $('<img class="resize left" src="/assets/images/inqling_pics/i1.jpg"/><li class="inqling" id="inq_"'+id+'><div class="text">'+body+'</div><div class="vote-bg"><span class="vote-text">5.0</span></div><img class="resize" src="/assets/images/profile_pics/1.jpg"></li>').prependTo('.posts');
     }
   });
 }
