@@ -22,7 +22,7 @@ class Solutions_model extends CI_Model{
 			'down_votes' => 0,
 			'inapp_flag' => false,
 			'date_created' => date_create(),
-			'u_id' => 0,
+			'u_id' => 1,
 			'inq_id' => $inq_id
 		);
 
